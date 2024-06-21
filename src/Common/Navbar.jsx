@@ -56,7 +56,7 @@ const Navbar = () => {
                                     </div>
                                 </div>
                                 <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                                    <li>{user.displayName}</li>
+                                    <li className="text-center font-bold text-sm">{user.displayName?user.displayName:"Name Not Provided"}</li>
                                     <li><Link to='/profile'>Profile</Link></li>
                                     <li><button onClick={logOut}>Logout</button></li>
                                 </ul>
