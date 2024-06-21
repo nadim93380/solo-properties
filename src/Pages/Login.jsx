@@ -2,10 +2,11 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
-
+    const navigate = useNavigate();
     const { loginUser } = useContext(AuthContext)
 
     const handleSignIn = (e) => {
@@ -17,6 +18,7 @@ const Login = () => {
         loginUser(email, password)
             .then(() => {
                 toast("Login Successfully")
+                navigate()
             })
             .catch(err => {
                 toast.error("Something went wrong")

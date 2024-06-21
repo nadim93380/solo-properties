@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom'
+
 
 import 'react-toastify/dist/ReactToastify.css';
 
 
 const Register = () => {
+    const navigate = useNavigate();
     const { creatUser } = useContext(AuthContext)
 
     const handleSignUp = (e) => {
@@ -19,6 +22,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 toast("User Created Successfully")
+                navigate('/')
             })
             .catch(err => {
                 toast.error("Something went wrong. Try Again Later")
