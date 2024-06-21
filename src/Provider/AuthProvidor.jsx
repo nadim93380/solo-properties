@@ -8,15 +8,18 @@ export const AuthContext = createContext(null)
 
 const AuthProvidor = ({ children }) => {
     const auth = getAuth(app);
-    const [user ,setUser]=useState(null)
+    const [user, setUser] = useState(null)
+    const [loading,setLoading]=useState(true)
 
     // Creat user with email pass
     const creatUser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     // Login User With email pass
     const loginUser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
@@ -24,11 +27,15 @@ const AuthProvidor = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
             if (user) {
-              setUser(user)
+                setUser(user)
+                setLoading(false)
             } else {
               setUser(null)
             }
         });
+        return () => {
+            unsubscribe()
+        }
         
     }, [])
     
@@ -41,7 +48,8 @@ const AuthProvidor = ({ children }) => {
         creatUser,
         loginUser,
         user,
-        logout
+        logout,
+        loading
     }
     return (
         <AuthContext.Provider value={authSharing}>

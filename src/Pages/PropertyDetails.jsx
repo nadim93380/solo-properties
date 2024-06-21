@@ -7,7 +7,6 @@ const PropertyDetails = () => {
     const allData = useLoaderData()
 
     const targetItem = allData.find(item => item.id === parseInt(id))
-    console.log(targetItem)
 
     return (
         <div className="pt-20 w-11/12 md:w-10/12 mx-auto">

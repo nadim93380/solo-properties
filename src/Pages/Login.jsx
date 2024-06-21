@@ -18,7 +18,7 @@ const Login = () => {
         loginUser(email, password)
             .then(() => {
                 toast("Login Successfully")
-                navigate()
+                navigate('/')
             })
             .catch(err => {
                 toast.error("Something went wrong")
