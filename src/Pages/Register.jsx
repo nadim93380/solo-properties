@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from 'react-toastify';
@@ -7,11 +7,14 @@ import { useNavigate } from 'react-router-dom'
 
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
+import Loading from "../Loading/Loading";
 
 
 const Register = () => {
     const navigate = useNavigate();
-    const { creatUser } = useContext(AuthContext)
+    const { creatUser,logout } = useContext(AuthContext);
+    
+    
 
     const handleSignUp = (e) => {
         e.preventDefault()
@@ -19,15 +22,20 @@ const Register = () => {
         const name = e.target.name.value
         const photo = e.target.photo.value
         const password = e.target.password.value
-        console.log(email, password,name,photo)
+        console.log(email, password, name, photo)
 
         creatUser(email, password)
             .then(result => {
+                toast("User Created Successfully. Please Login")
                 updateProfile(result.user, {
                     displayName: name, photoURL: photo
                 })
-                toast("User Created Successfully")
-                navigate('/')
+                    // .then(() => {
+                    //     navigate('/')
+                    // })
+                logout()
+                
+
             })
             .catch(err => {
                 toast.error("Something went wrong. Try Again Later")
@@ -35,6 +43,7 @@ const Register = () => {
             })
         e.target.reset()
     }
+    
 
     return (
         <div className="pt-20">

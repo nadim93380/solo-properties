@@ -49,8 +49,10 @@ const AuthProvidor = ({ children }) => {
         creatUser,
         loginUser,
         user,
+        setUser,
         logout,
-        loading
+        loading,
+        setLoading
     }
     return (
         <AuthContext.Provider value={authSharing}>
