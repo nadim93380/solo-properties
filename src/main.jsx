@@ -8,6 +8,8 @@ import {
 import MainLayout from './Layout/MainLayout';
 import Home from './Pages/Home';
 import PropertyDetails from './Pages/PropertyDetails';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,14 @@ const router = createBrowserRouter([
         path: '/details/:id',
         element: <PropertyDetails></PropertyDetails>,
         loader: ()=>fetch('/fakeData.json'),
+      },
+      {
+        path: '/login',
+        element: <Login></Login>,
+      },
+      {
+        path: '/register',
+        element: <Register></Register>,
       }
     ]
   },
