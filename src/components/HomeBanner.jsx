@@ -8,13 +8,13 @@ import 'swiper/css';
 
 const HomeBanner = () => {
     return (
-        <div className='h-[80vh]'>
+        <div>
             <Swiper
                 modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
                 spaceBetween={50}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 1500,
+                    delay: 2000,
                     pauseOnMouseEnter: true,
                     disableOnInteraction: false
                 }}
@@ -26,7 +26,7 @@ const HomeBanner = () => {
 
             >
                 <SwiperSlide>
-                    <div id="slide1" className="carousel-item relative w-full">
+                    <div id="slide1" className="carousel-item w-full">
                         <img src="https://cdn.pixabay.com/photo/2017/03/29/15/18/tianjin-2185510_1280.jpg" className="w-full h-[80vh] object-cover" />
                         <div className="flex flex-col justify-center items-center absolute w-full bg-gradient-to-r from-slate-700 h-full">
                             <h3 className='text-3xl text-center text-white font-bold'>Make the place luxury</h3>
@@ -35,7 +35,7 @@ const HomeBanner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div id="slide1" className="carousel-item relative w-full">
+                    <div id="slide1" className="carousel-item w-full">
                         <img src="https://cdn.pixabay.com/photo/2022/10/02/05/34/city-7492749_960_720.jpg" className="w-full h-[80vh] object-cover" />
                         <div className="flex flex-col justify-center items-center absolute w-full bg-gradient-to-r from-slate-700 h-full">
                             <h3 className='text-3xl text-center text-white font-bold'>Make the place luxury</h3>
@@ -44,7 +44,7 @@ const HomeBanner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div id="slide1" className="carousel-item relative w-full">
+                    <div id="slide1" className="carousel-item w-full">
                         <img src="https://cdn.pixabay.com/photo/2018/09/25/09/17/sale-3701777_1280.jpg" className="w-full h-[80vh] object-cover" />
                         <div className="flex flex-col justify-center items-center absolute w-full bg-gradient-to-r from-slate-700 h-full">
                             <h3 className='text-3xl text-center text-white font-bold'>Make the place luxury</h3>
@@ -53,7 +53,7 @@ const HomeBanner = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div id="slide1" className="carousel-item relative w-full">
+                    <div id="slide1" className="carousel-item w-full">
                         <img src="https://cdn.pixabay.com/photo/2021/12/05/02/33/real-estate-6846355_1280.jpg" className="w-full h-[80vh] object-cover" />
                         <div className="flex flex-col justify-center items-center absolute w-full bg-gradient-to-r from-slate-700 h-full">
                             <h3 className='text-3xl text-center text-white font-bold'>Make the place luxury</h3>

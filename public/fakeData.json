@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "estate_title": "Oceanfront Paradise Villa",
+        "image": "https://images.pexels.com/photos/3155666/pexels-photo-3155666.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Luxury Villas",
+        "description": "A stunning villa with breathtaking ocean views, modern amenities, and luxurious finishes.",
+        "price": 3500000,
+        "status": "sale",
+        "area": "5000 sqft",
+        "location": "Malibu, CA",
+        "facilities": ["living room", "swimming pool", "kitchen", "home theater", "private beach access"]
+    },
+    {
+        "id": 2,
+        "estate_title": "Downtown Luxury Penthouse",
+        "image": "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Penthouse",
+        "description": "Experience urban living at its finest in this luxurious penthouse with panoramic city views.",
+        "price": 4500000,
+        "status": "sale",
+        "area": "3000 sqft",
+        "location": "New York, NY",
+        "facilities": ["living room", "swimming pool", "kitchen", "rooftop terrace", "gym"]
+    },
+    {
+        "id": 3,
+        "estate_title": "Countryside Mansion Retreat",
+        "image": "https://images.pexels.com/photos/5997996/pexels-photo-5997996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Mansion",
+        "description": "A secluded mansion nestled in the countryside, perfect for a private and tranquil living experience.",
+        "price": 5200000,
+        "status": "rent",
+        "area": "10000 sqft",
+        "location": "Aspen, CO",
+        "facilities": ["living room", "swimming pool", "kitchen", "spa", "tennis court"]
+    },
+    {
+        "id": 4,
+        "estate_title": "Modern High-Rise Apartment",
+        "image": "https://images.pexels.com/photos/9259645/pexels-photo-9259645.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Apartments",
+        "description": "A chic and modern apartment in a high-rise building, offering stunning views and top-of-the-line amenities.",
+        "price": 2500000,
+        "status": "sale",
+        "area": "1500 sqft",
+        "location": "San Francisco, CA",
+        "facilities": ["living room", "swimming pool", "kitchen", "gym", "concierge service"]
+    },
+    {
+        "id": 5,
+        "estate_title": "Beachside Luxury Condo",
+        "image": "https://images.pexels.com/photos/20799209/pexels-photo-20799209/free-photo-of-sea-with-waves-and-a-luxury-resort-on-the-coast.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Condominium",
+        "description": "A luxurious condo located just steps from the beach, with modern interiors and beautiful ocean views.",
+        "price": 1800000,
+        "status": "rent",
+        "area": "2200 sqft",
+        "location": "Miami, FL",
+        "facilities": ["living room", "swimming pool", "kitchen", "private balcony", "beach access"]
+    }
+]

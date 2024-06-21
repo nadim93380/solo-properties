@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import MainLayout from './Layout/MainLayout';
 import Home from './Pages/Home';
+import PropertyDetails from './Pages/PropertyDetails';
 
 const router = createBrowserRouter([
   {
@@ -15,7 +16,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home></Home>
+        element: <Home></Home>,
+        loader: ()=>fetch('/fakeData.json'),
+      },
+      {
+        path: '/details/:id',
+        element: <PropertyDetails></PropertyDetails>,
+        loader: ()=>fetch('/fakeData.json'),
       }
     ]
   },
