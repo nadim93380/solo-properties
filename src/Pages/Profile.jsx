@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from "react-toastify";
-import { Navigate } from "react-router-dom";
+
 
 
 const Profile = () => {
