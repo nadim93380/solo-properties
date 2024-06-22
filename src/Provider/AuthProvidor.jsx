@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { app } from "../firebase.config";
 
@@ -44,6 +44,19 @@ const AuthProvidor = ({ children }) => {
     const logout = () => {
         return signOut(auth)
     }
+    // Update user 
+    const updateUserData = (name = false, photo = false)=>{
+        if (name) {
+            return updateProfile(user, {
+                displayName: name
+            })
+        }
+        if (photo) {
+            return updateProfile(user, {
+                photoURL: photo
+            })
+        }
+    }
 
     const authSharing = {
         creatUser,
@@ -52,7 +65,8 @@ const AuthProvidor = ({ children }) => {
         setUser,
         logout,
         loading,
-        setLoading
+        setLoading,
+        updateUserData
     }
     return (
         <AuthContext.Provider value={authSharing}>

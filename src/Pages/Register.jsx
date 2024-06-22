@@ -1,17 +1,17 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 
 
 import 'react-toastify/dist/ReactToastify.css';
 import { updateProfile } from "firebase/auth";
-import Loading from "../Loading/Loading";
+
 
 
 const Register = () => {
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const { creatUser,logout } = useContext(AuthContext);
     
     
