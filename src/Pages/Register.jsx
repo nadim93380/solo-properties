@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from 'react-toastify';
@@ -11,6 +11,10 @@ import { updateProfile } from "firebase/auth";
 
 
 const Register = () => {
+
+    useEffect(() => {
+        document.title = 'Register - Solo Properties';
+    }, []);
     // const navigate = useNavigate();
     const { creatUser,logout } = useContext(AuthContext);
     

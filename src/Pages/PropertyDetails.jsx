@@ -1,8 +1,13 @@
 
+import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 
 
 const PropertyDetails = () => {
+    useEffect(() => {
+        document.title = 'Details - Solo Properties';
+    }, []);
+    
     const { id } = useParams()
     const allData = useLoaderData()
 

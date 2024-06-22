@@ -1,8 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
 const ErrorPage = () => {
+    useEffect(() => {
+        document.title = '404 not found - Solo Properties';
+    }, []);
     return (
         <div>
             <section className="flex items-center h-full p-16 dark:bg-gray-50 dark:text-gray-800">

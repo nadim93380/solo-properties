@@ -1,10 +1,13 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from "react-toastify";
 
 
 
 const Profile = () => {
+    useEffect(() => {
+        document.title = 'Profile - Solo Properties';
+    }, []);
 
     const { user, updateUserData } = useContext(AuthContext)
 

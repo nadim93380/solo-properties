@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from "react-toastify";
@@ -7,6 +7,11 @@ import { useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
+
+    useEffect(() => {
+        document.title = 'Login - Solo Properties';
+    }, []);
+
     const location = useLocation()
     const navigate = useNavigate();
     const { loginUser,loginWithGoogle } = useContext(AuthContext)

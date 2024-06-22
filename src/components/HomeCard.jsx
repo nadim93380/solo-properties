@@ -3,7 +3,11 @@
 import { Link } from "react-router-dom";
 
 
-const HomeCard = ({item}) => {
+
+
+const HomeCard = ({ item }) => {
+    
+    
     return (
         <div className="card h-96 shadow-xl image-full">
             <figure><img src={item.image} className="object-cover w-full" /></figure>
