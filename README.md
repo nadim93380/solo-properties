@@ -1,8 +1,16 @@
-# React + Vite
+# Solo Properties Limited
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Site Link : [Click For Visit](https://solo-properties.netlify.app/)
 
-Currently, two official plugins are available:
+There are some important characteristics of this website : 
+- This is a fully functional website.
+- User can interact with all options what they wish to do.
+- Some private route and login system integrated.
+- User data is secured with firebase.
+- A hassle free well maintained website.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Installed Packages
+- AOS Package
+- Animate.css
+- Swiper Slider
+
