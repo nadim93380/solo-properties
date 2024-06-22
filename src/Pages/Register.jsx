@@ -18,11 +18,32 @@ const Register = () => {
 
     const handleSignUp = (e) => {
         e.preventDefault()
+        
         const email = e.target.email.value
         const name = e.target.name.value
         const photo = e.target.photo.value
         const password = e.target.password.value
-        console.log(email, password, name, photo)
+        console.log(email, password, typeof (password), name, photo)
+
+
+
+        if (!/[A-Z]/.test(password)) {
+         
+            toast.error("Password Must Have One Uppercase")
+            e.target.password.value = ""
+            return
+        }
+        else if (!/[a-z]/.test(password)) {
+        
+            toast.error("Password Must Have One Lowecase")
+            e.target.password.value = ""
+            return
+        }
+        else if (password.length < 6) {
+            toast.error("Password should atleast 6 character")
+            e.target.password.value = ""
+            return
+        }
 
         creatUser(email, password)
             .then(result => {
@@ -38,7 +59,7 @@ const Register = () => {
 
             })
             .catch(err => {
-                toast.error("Something went wrong. Try Again Later")
+                toast.error("User Already Existed")
                 console.log(err.message)
             })
         e.target.reset()
@@ -46,7 +67,7 @@ const Register = () => {
     
 
     return (
-        <div className="pt-20">
+        <div className="py-20">
 
             <div className="flex flex-col justify-center h-[50vh] items-center">
                 <h3 className="text-4xl font-bold mb-6">Register Now</h3>

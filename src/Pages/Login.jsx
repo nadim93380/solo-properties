@@ -9,22 +9,23 @@ import { useNavigate } from 'react-router-dom'
 const Login = () => {
     const location = useLocation()
     const navigate = useNavigate();
-    const { loginUser } = useContext(AuthContext)
-    
-    
-    
+    const { loginUser,loginWithGoogle } = useContext(AuthContext)
+
+
+
     const to = location.state
-    
+    // Handle Email Pass Sign In
     const handleSignIn = (e) => {
         e.preventDefault()
 
         const email = e.target.email.value
         const password = e.target.password.value
-        console.log(email, password)
         loginUser(email, password)
             .then(() => {
                 toast("Login Successfully")
-                navigate(`${to?to:"/"}`)
+                setTimeout(() => {
+                    navigate(`${to ? to : "/"}`)
+                }, 3000)
             })
             .catch(err => {
                 toast.error("Something went wrong")
@@ -34,8 +35,22 @@ const Login = () => {
 
     }
 
+    // Handle Google Sign In
+    const handleGoogleSignIn = () => {
+        loginWithGoogle()
+            .then(() => {
+                toast("Login Successfully")
+                setTimeout(() => {
+                    navigate(`${to ? to : "/"}`)
+                }, 3000)
+            })
+            .catch(() => {
+            toast.error("Something Went Wrong")
+        })
+    }
+
     return (
-        <div className="pt-20">
+        <div className="py-20">
 
             <div className="flex flex-col justify-center h-[50vh] items-center">
                 <h3 className="text-4xl font-bold mb-6">Login Now</h3>
@@ -50,6 +65,17 @@ const Login = () => {
                     </label>
                     <button className="btn bg-green-500 w-full">Login</button>
                 </form>
+                <div>
+                    <div className="flex w-full mt-3">
+                        <div className="grid h-20 flex-grow card rounded-box place-items-center">
+                            <button className="btn" onClick={handleGoogleSignIn}>GOOGLE</button>
+                        </div>
+                        <div className="divider divider-horizontal">OR</div>
+                        <div className="grid h-20 flex-grow card rounded-box place-items-center">
+                            <button className="btn">GITHUB</button>
+                        </div>
+                    </div>
+                </div>
                 <div className="flex justify-between items-center gap-10">
                     <p>New Here ? </p>
                     <Link to='/register' className="text-blue-600">Register</Link>

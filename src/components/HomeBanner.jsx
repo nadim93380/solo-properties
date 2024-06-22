@@ -14,8 +14,8 @@ const HomeBanner = () => {
                 spaceBetween={50}
                 slidesPerView={1}
                 autoplay={{
-                    delay: 2000,
-                    pauseOnMouseEnter: true,
+                    delay: 2500,
+                    pauseOnMouseEnter: false,
                     disableOnInteraction: false
                 }}
                 navigation
