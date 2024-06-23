@@ -1,6 +1,9 @@
 
 import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
+import { IoCallSharp } from "react-icons/io5";
+import { addToLocalStorage, getFromLocalStorage } from "../Utility/LocalStorage";
+import { ToastContainer, toast } from "react-toastify";
 
 
 const PropertyDetails = () => {
@@ -9,15 +12,28 @@ const PropertyDetails = () => {
     }, []);
     
     const { id } = useParams()
+    const idInt = parseInt(id)
     const allData = useLoaderData()
 
     const targetItem = allData.find(item => item.id === parseInt(id))
+
+    // For local Storage
+    const handleAddLocalStorage = () =>{
+        const orderStorage = getFromLocalStorage()
+        const exists = orderStorage.find(readId => readId === idInt)
+        if (!exists) {
+            addToLocalStorage(idInt)
+            toast('Order Successfull')
+        } else {
+            toast.error('Already Ordered. View Status On Order Page.')
+        }
+    }
 
     return (
         <div className="pt-20 w-11/12 md:w-10/12 mx-auto">
             <div>
                 <div className="relative">
-                    <img src={targetItem.image} className="w-full object-cover h-[60vh] rounded-lg mb-6" />
+                    <img src={targetItem.image} className="w-full object-cover h-[30vh] md:h-[60vh] rounded-lg mb-6" />
                     <div className="absolute left-0 top-6 bg-yellow-400 p-4 text-2xl rounded-r-full font-bold"><h3>For {targetItem.status}</h3></div>
                 </div>
 
@@ -39,10 +55,12 @@ const PropertyDetails = () => {
                     </div>
                     <div className="flex justify-between items-center pb-3">
                         <button className="btn btn-outline">Price : {targetItem.price} $</button>
-                        <button className="btn btn-outline btn-primary">Call Now</button>
+                        <button className="btn btn-outline btn-primary" onClick={handleAddLocalStorage}>Make Order</button>
+                        <button className="btn btn-outline btn-primary"><IoCallSharp />Call Now</button>
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

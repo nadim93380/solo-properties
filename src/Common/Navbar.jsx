@@ -19,6 +19,7 @@ const Navbar = () => {
     }
     const link = <>
         <li><NavLink to='/'>Home</NavLink></li>
+        {user && <li><NavLink to='/order'>Order</NavLink></li>}
         {user && <li><NavLink to='/profile'>Profile</NavLink></li>}
         <li><NavLink to='/contact'>Contact Us</NavLink></li>
 
@@ -36,7 +37,7 @@ const Navbar = () => {
                             {link}
                         </ul>
                     </div>
-                    <a className="btn btn-ghost text-2xl md:text-3xl font-bold text-yellow-300">Solo Properties</a>
+                    <a className="btn btn-ghost text-2xl md:text-3xl font-bold text-yellow-500">Solo Properties</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">

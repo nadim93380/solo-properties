@@ -14,8 +14,8 @@ import Profile from './Pages/Profile';
 import AuthProvidor from './Provider/AuthProvidor';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
 import ErrorPage from './components/ErrorPage';
-import AboutUs from './components/ContactUs';
 import ContactUs from './components/ContactUs';
+import Order from './Pages/Order';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +44,11 @@ const router = createBrowserRouter([
       {
         path: '/profile',
         element: <PrivateRoute><Profile></Profile></PrivateRoute>,
+      },
+      {
+        path: '/order',
+        element: <PrivateRoute><Order></Order></PrivateRoute>,
+        loader: () => fetch('/fakeData.json'),
       },
       {
         path: '/contact',

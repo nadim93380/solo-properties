@@ -3,6 +3,8 @@ import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom'
+import { FcGoogle } from "react-icons/fc";
+import { FaGithub } from "react-icons/fa";
 
 
 
@@ -14,7 +16,7 @@ const Login = () => {
 
     const location = useLocation()
     const navigate = useNavigate();
-    const { loginUser,loginWithGoogle } = useContext(AuthContext)
+    const { loginUser,loginWithGoogle,signInWithGitHub } = useContext(AuthContext)
 
 
 
@@ -54,6 +56,20 @@ const Login = () => {
         })
     }
 
+    // Handle GitHub Sign In
+    const handleGitHubSignIn = () => {
+        signInWithGitHub()
+            .then(() => {
+                toast("Login Successfully")
+                setTimeout(() => {
+                    navigate(`${to ? to : "/"}`)
+                }, 3000)
+            })
+            .catch(() => {
+            toast.error("Something Went Wrong")
+        })
+    }
+
     return (
         <div className="py-20">
 
@@ -73,11 +89,11 @@ const Login = () => {
                 <div>
                     <div className="flex w-full mt-3">
                         <div className="grid h-20 flex-grow card rounded-box place-items-center">
-                            <button className="btn" onClick={handleGoogleSignIn}>GOOGLE</button>
+                            <button className="btn" onClick={handleGoogleSignIn}><FcGoogle />GOOGLE</button>
                         </div>
                         <div className="divider divider-horizontal">OR</div>
                         <div className="grid h-20 flex-grow card rounded-box place-items-center">
-                            <button className="btn">GITHUB</button>
+                            <button className="btn" onClick={handleGitHubSignIn}><FaGithub />GITHUB</button>
                         </div>
                     </div>
                 </div>

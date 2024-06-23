@@ -1,6 +1,6 @@
 # Solo Properties Limited
 
-Live Site Link : [Click For Visit](https://solo-properties.netlify.app/)
+Live Site Link : [Click For Visit](https://solopropertiesltd.netlify.app/)
 
 There are some important characteristics of this website : 
 - This is a fully functional website.

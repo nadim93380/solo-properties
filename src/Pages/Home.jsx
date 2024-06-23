@@ -16,7 +16,7 @@ const Home = () => {
 
             <HomeBanner></HomeBanner>
             
-            <div className='bg-slate-100'>
+            <div>
                 <HomeCardContainer allData={allData}></HomeCardContainer>
             </div>
         </div>

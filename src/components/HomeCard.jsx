@@ -1,15 +1,22 @@
 /* eslint-disable react/prop-types */
 
 import { Link } from "react-router-dom";
-
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
 
 
 
 const HomeCard = ({ item }) => {
     
+    useEffect(() => {
+        AOS.init();
+        AOS.refresh()
+    }, [])
+
     
     return (
-        <div className="card h-96 shadow-xl image-full">
+        <div className="card h-96 shadow-xl image-full" data-aos="fade-up" data-aos-once="false">
             <figure><img src={item.image} className="object-cover w-full" /></figure>
             <div className="card-body">
                 <h2 className="card-title text-2xl font-bold text-yellow-400">{item.estate_title}</h2>
