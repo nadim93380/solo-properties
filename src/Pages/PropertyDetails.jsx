@@ -30,7 +30,7 @@ const PropertyDetails = () => {
     }
 
     return (
-        <div className="pt-20 w-11/12 md:w-10/12 mx-auto">
+        <div className="py-20 w-11/12 md:w-10/12 mx-auto">
             <div>
                 <div className="relative">
                     <img src={targetItem.image} className="w-full object-cover h-[30vh] md:h-[60vh] rounded-lg mb-6" />
@@ -55,7 +55,7 @@ const PropertyDetails = () => {
                     </div>
                     <div className="flex justify-between items-center pb-3">
                         <button className="btn btn-outline">Price : {targetItem.price} $</button>
-                        <button className="btn btn-outline btn-primary" onClick={handleAddLocalStorage}>Make Order</button>
+                        <button className="btn btn-outline btn-success" onClick={handleAddLocalStorage}>Make Order</button>
                         <button className="btn btn-outline btn-primary"><IoCallSharp />Call Now</button>
                     </div>
                 </div>

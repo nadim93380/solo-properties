@@ -1,10 +1,12 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { ToastContainer, toast } from "react-toastify";
 import { useNavigate } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
+import { FaRegEye } from "react-icons/fa6";
+import { FaRegEyeSlash } from "react-icons/fa6";
 
 
 
@@ -13,6 +15,7 @@ const Login = () => {
     useEffect(() => {
         document.title = 'Login - Solo Properties';
     }, []);
+    const [show,setShow]=useState(false)
 
     const location = useLocation()
     const navigate = useNavigate();
@@ -32,7 +35,7 @@ const Login = () => {
                 toast("Login Successfully")
                 setTimeout(() => {
                     navigate(`${to ? to : "/"}`)
-                }, 3000)
+                }, 2500)
             })
             .catch(err => {
                 toast.error("Something went wrong")
@@ -82,7 +85,8 @@ const Login = () => {
                     </label>
                     <label className="input input-bordered flex items-center gap-2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clipRule="evenodd" /></svg>
-                        <input type="text" name="password" className="grow" placeholder="Password" required />
+                        <input type={show?"text":"password"} name="password" className="grow" placeholder="Password" required />
+                        <div onClick={()=>setShow(!show)} className="cursor-pointer">{show?<FaRegEyeSlash />:<FaRegEye/>}</div>
                     </label>
                     <button className="btn bg-green-500 w-full">Login</button>
                 </form>

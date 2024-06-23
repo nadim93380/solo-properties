@@ -58,5 +58,53 @@
         "area": "2200 sqft",
         "location": "Miami, FL",
         "facilities": ["living room", "swimming pool", "kitchen", "private balcony", "beach access"]
+    },
+    {
+        "id": 6,
+        "estate_title": "Suburban Family Home",
+        "image": "https://images.pexels.com/photos/3935333/pexels-photo-3935333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Family Homes",
+        "description": "A beautiful suburban home perfect for families, located in a quiet neighborhood. This spacious home features a large backyard, modern kitchen, and cozy living spaces. Enjoy the comfort of suburban living with excellent schools, parks, and community amenities nearby. The home is designed for family life with ample bedrooms, a playroom, and a family-friendly layout. Ideal for those seeking a peaceful and welcoming community.",
+        "price": 850000,
+        "status": "sale",
+        "area": "3200 sqft",
+        "location": "Austin, TX",
+        "facilities": ["living room", "kitchen", "backyard", "playroom", "garage"]
+    },
+    {
+        "id": 7,
+        "estate_title": "City Center Studio Apartment",
+        "image": "https://images.pexels.com/photos/6045336/pexels-photo-6045336.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Studio Apartments",
+        "description": "A modern studio apartment located in the heart of the city, perfect for singles or young professionals. This compact yet stylish apartment offers convenience and comfort with its contemporary design, efficient use of space, and high-quality finishes. The building includes amenities such as a fitness center and rooftop lounge. Ideal for those who want to be in the center of urban activity.",
+        "price": 550000,
+        "status": "sale",
+        "area": "600 sqft",
+        "location": "Chicago, IL",
+        "facilities": ["living room", "kitchen", "fitness center", "rooftop lounge", "24/7 security"]
+    },
+    {
+        "id": 8,
+        "estate_title": "Luxury Mountain Cabin",
+        "image": "https://images.pexels.com/photos/2479641/pexels-photo-2479641.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Cabins",
+        "description": "A luxury cabin nestled in the mountains, offering a serene escape with stunning views. This cabin features rustic charm with modern amenities, including a gourmet kitchen, hot tub, and large deck overlooking the mountains. Perfect for nature lovers and those seeking a peaceful retreat, the cabin provides easy access to hiking trails and outdoor activities. Ideal for a weekend getaway or a seasonal home.",
+        "price": 1200000,
+        "status": "sale",
+        "area": "2800 sqft",
+        "location": "Jackson, WY",
+        "facilities": ["living room", "kitchen", "hot tub", "deck", "fireplace"]
+    },
+    {
+        "id": 9,
+        "estate_title": "Historic Townhouse",
+        "image": "https://images.pexels.com/photos/20859596/pexels-photo-20859596/free-photo-of-seaside-franciscan-monastery-and-museum-in-hvar-croatia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+        "segment_name": "Townhouses",
+        "description": "A charming historic townhouse located in a picturesque neighborhood. This beautifully restored property features original architectural details combined with modern updates. The townhouse offers spacious living areas, a modern kitchen, and a private garden. Situated in a historic district, it provides a unique living experience with a sense of history and community. Perfect for those who appreciate classic architecture and a vibrant neighborhood.",
+        "price": 950000,
+        "status": "sale",
+        "area": "2400 sqft",
+        "location": "Charleston, SC",
+        "facilities": ["living room", "kitchen", "garden", "dining room", "library"]
     }
 ]

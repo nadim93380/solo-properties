@@ -16,8 +16,17 @@ const addToLocalStorage = id => {
     }
 }
 
+const removeFromLocalStorage = id => {
+    const prevStored = getFromLocalStorage();
+    const exists = prevStored.find(prevId => prevId === id);
+    if (exists) {
+        prevStored.pop(id)
+        localStorage.setItem("storePdId",JSON.stringify(prevStored))
+    }
+}
 
 
 
 
-export { addToLocalStorage, getFromLocalStorage}
+
+export { addToLocalStorage, getFromLocalStorage, removeFromLocalStorage}
