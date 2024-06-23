@@ -1,7 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom'
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa";
@@ -32,10 +33,10 @@ const Login = () => {
         const password = e.target.password.value
         loginUser(email, password)
             .then(() => {
-                toast("Login Successfully")
+                toast("Login Successfully.Please wait.")
                 setTimeout(() => {
                     navigate(`${to ? to : "/"}`)
-                }, 2500)
+                }, 2000)
             })
             .catch(err => {
                 toast.error("Something went wrong")
@@ -49,10 +50,10 @@ const Login = () => {
     const handleGoogleSignIn = () => {
         loginWithGoogle()
             .then(() => {
-                toast("Login Successfully")
+                toast("Login Successfully.Please Wait")
                 setTimeout(() => {
                     navigate(`${to ? to : "/"}`)
-                }, 3000)
+                }, 2000)
             })
             .catch(() => {
             toast.error("Something Went Wrong")
@@ -63,10 +64,10 @@ const Login = () => {
     const handleGitHubSignIn = () => {
         signInWithGitHub()
             .then(() => {
-                toast("Login Successfully")
+                toast("Login Successfully.Please wait.")
                 setTimeout(() => {
                     navigate(`${to ? to : "/"}`)
-                }, 3000)
+                }, 2000)
             })
             .catch(() => {
             toast.error("Something Went Wrong")
@@ -106,7 +107,7 @@ const Login = () => {
                     <Link to='/register' className="text-blue-600">Register</Link>
                 </div>
             </div>
-            <ToastContainer></ToastContainer>
+            {/* <ToastContainer></ToastContainer> */}
         </div>
     );
 };

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvidor";
 import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Navbar = () => {
@@ -68,6 +69,7 @@ const Navbar = () => {
                     }
                 </div>
             </div>
+            {/* <ToastContainer></ToastContainer> */}
         </div>
     );
 };

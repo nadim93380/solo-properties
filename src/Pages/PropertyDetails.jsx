@@ -3,7 +3,8 @@ import { useEffect } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { IoCallSharp } from "react-icons/io5";
 import { addToLocalStorage, getFromLocalStorage } from "../Utility/LocalStorage";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const PropertyDetails = () => {
@@ -60,7 +61,7 @@ const PropertyDetails = () => {
                     </div>
                 </div>
             </div>
-            <ToastContainer></ToastContainer>
+            {/* <ToastContainer></ToastContainer> */}
         </div>
     );
 };

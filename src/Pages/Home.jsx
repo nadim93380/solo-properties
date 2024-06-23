@@ -3,7 +3,6 @@ import HomeBanner from "../components/HomeBanner";
 import HomeCardContainer from "../components/HomeCardContainer";
 import { useEffect } from "react";
 
-
 const Home = () => {
 
     const allData = useLoaderData()
@@ -19,6 +18,7 @@ const Home = () => {
             <div>
                 <HomeCardContainer allData={allData}></HomeCardContainer>
             </div>
+            {/* <ToastContainer></ToastContainer> */}
         </div>
     );
 };

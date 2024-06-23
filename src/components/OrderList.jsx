@@ -2,7 +2,8 @@
 
 import { useEffect } from "react";
 import { removeFromLocalStorage } from "../Utility/LocalStorage";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -60,7 +61,7 @@ const OrderList = ({ property }) => {
                     </div>
                 </div>
             </li>
-            <ToastContainer></ToastContainer>
+            {/* <ToastContainer></ToastContainer> */}
         </div>
     );
 };
