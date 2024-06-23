@@ -19,7 +19,7 @@ const HomeCard = ({ item }) => {
                 <p><span className="font-bold">Area : </span>{item.area} </p>
                 <div className="card-actions justify-between">
                     <button className="btn btn-outline btn-warning">Price : {item.price}$</button>
-                    <Link to={`/details/${item.id}`} className="btn btn-primary">View Details</Link>
+                    <Link to={`/details/${item.id}`} className="btn btn-primary">View Property</Link>
                 </div>
             </div>
         </div>
