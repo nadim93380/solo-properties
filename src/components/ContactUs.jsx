@@ -1,8 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 
+import { useEffect } from "react";
+
 
 const ContactUs = () => {
-
+    useEffect(() => {
+        document.title = 'Contact - Solo Properties';
+    }, []);
 
     return (
         <div className="grid max-w-screen-xl grid-cols-1 gap-8 px-8 py-24 mx-auto rounded-lg md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 dark:bg-gray-100 dark:text-gray-800">
