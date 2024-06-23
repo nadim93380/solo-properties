@@ -18,11 +18,11 @@ const addToLocalStorage = id => {
 
 const removeFromLocalStorage = id => {
     const prevStored = getFromLocalStorage();
-    const exists = prevStored.find(prevId => prevId === id);
-    if (exists) {
-        prevStored.pop(id)
-        localStorage.setItem("storePdId",JSON.stringify(prevStored))
-    }
+
+    const index = prevStored.indexOf(id);
+    prevStored.splice(index, 1);
+    localStorage.setItem("storePdId",JSON.stringify(prevStored))
+    
 }
 
 
